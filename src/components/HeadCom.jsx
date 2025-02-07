@@ -12,12 +12,12 @@ const HeadCom = () => {
                     <div className="flex items-center gap-5">
                         <div className="flex items-center gap-2">
                             <FaBars className="text-xl text-white block md:hidden" onClick={() => setIsOpen(!isOpen)}/>
-                            <Link to="/"><img src={logo} alt="" className="w-16"/></Link>
+                            <Link to="/"><img src={logo} alt="" className=" w-14 sm:w-20 md:w-24"/></Link>
                         </div>
-                        <ul type="none" className={`${isOpen?"":"md:flex hidden"} md:max-w-full w-[90%] md:static absolute z-20 top-19  gap-5 md:bg-inherit bg-gray-400 rounded-b-md px-3 py-3 md:px-0 md:py-0`}>
-                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">Movie</Link></li>
-                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">TV Show</Link></li>
-                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">People</Link></li>
+                        <ul type="none" className={`${isOpen?"":"md:flex hidden"} md:max-w-full w-[90%] md:static absolute z-20 sm:top-23 top-17 gap-5 md:bg-inherit bg-gray-400 rounded-b-md px-3 py-3 md:px-0 md:py-0`}>
+                            <li className=" md:border-0 border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">Movie</Link></li>
+                            <li className=" md:border-0 border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">TV Show</Link></li>
+                            <li className=" md:border-0 border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">People</Link></li>
                         </ul>
                     </div>
                     <ul type="none" className="flex gap-4">
