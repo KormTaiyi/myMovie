@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import MainLayout from "./layouts/MainLayout"
-import MainLayoutmovie from "./layouts/MainLayoutmovie"
+import MainLayoutMovie from "./layouts/MainLayoutMovie"
 import ErrorPage from "./pages/ErrorPage"
 import HomePage from "./pages/HomePage"
 import { createBrowserRouter, RouterProvider } from 'react-router'
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/',
-    element:<MainLayoutmovie/>,
+    element:<MainLayoutMovie/>,
     children:[
       {
         path:'movie',
