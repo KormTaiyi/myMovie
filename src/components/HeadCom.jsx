@@ -1,57 +1,36 @@
 import { Link } from "react-router"
+import { FaBars, FaHeart, FaUser } from "react-icons/fa6";
 import logo from "../assets/logo.png"
-import { useEffect, useState } from 'react'
-import { FaBars, FaHeart, FaUser } from "react-icons/fa"
+import { useState } from "react";
 
 const HeadCom = () => {
-    const [state, setState] = useState(false)
-
-    // Replace javascript:void(0) paths with your paths
-    const navigation = [
-        { title: "Features", path: "javascript:void(0)" },
-        { title: "Integrations", path: "javascript:void(0)" },
-        { title: "Customers", path: "javascript:void(0)" },
-        { title: "Pricing", path: "javascript:void(0)" }
-    ]
-
-    useEffect(() => {
-        document.onclick = (e) => {
-            const target = e.target;
-            if (!target.closest(".menu-btn")) setState(false);
-        };
-    }, [])
-  return (
-    <header className={" pb-5 md:text-sm ${state ? "shadow-lg rounded-xl border  md:shadow-none md:border-none md:mx-2 md:mt-0" : ""}"}>
-        <div className="w-full bg-(--primary-color)">
-            <div  className="w-full px-1 sm:w-[90%] m-auto flex items-center justify-between">
-                <ul type="none" className="flex items-center gap-2">
-                    <div className="flex items-center">
-                        <div className="md:hidden">
-                            <button className="menu-btn text-gray-500 hover:text-gray-800"
-                                onClick={() => setState(!state)}><FaBars className="text-lg text-white font-bold"/>
-                            </button>
+    const [isOpen,setIsOpen]= useState(false)
+    return (
+      <header className="w-full">
+            <div className="bg-(--primary-color) relative">
+                <div className="w-[90%] m-auto flex items-center justify-between py-2">
+                    <div className="flex items-center gap-5">
+                        <div className="flex items-center gap-2">
+                            <FaBars className="text-xl text-white block md:hidden" onClick={() => setIsOpen(!isOpen)}/>
+                            <Link to="/"><img src={logo} alt="" className="w-16"/></Link>
                         </div>
-                        <Link to="/"><img src={logo} alt="" className="w-22"/></Link>
-                    </div>
-                    <div className={flex items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'} }>
-                        <ul type="none" className="justify-center items-center space-y-6 md:flex">
-                            <li><Link to="" className="text-md text-white font-bold">Movies</Link></li>
-                            <li><Link to="" className="text-md text-white font-bold">TV Shows</Link></li>
-                            <li><Link to="" className="text-md text-white font-bold">People</Link></li>
+                        <ul type="none" className={`${isOpen?"":"md:flex hidden"} md:max-w-full w-[90%] md:static absolute z-20 top-19  gap-5 md:bg-inherit bg-gray-400 rounded-b-md px-3 py-3 md:px-0 md:py-0`}>
+                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">Movie</Link></li>
+                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">TV Show</Link></li>
+                            <li className=" border-b-[1px] md:w-auto w-full py-1"><Link to="" className="text-lg text-white">People</Link></li>
                         </ul>
                     </div>
-                </ul>
-                <ul type="none" className="flex gap-4">
-                    <FaUser className="text-white text-xl cursor-pointer"/>
-                    <FaHeart className="text-white text-xl"/>
-                </ul>
+                    <ul type="none" className="flex gap-4">
+                        <FaUser className="text-xl text-white"/>
+                        <FaHeart className="text-xl text-white"/>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <form className="w-full">
-            <input type="search" placeholder="Search for a movie, tv show, person.." className="px-10 w-full py-2"/>
-        </form>
-    </header>
-  )
-}
-
-export default HeadCom
+            <div className="w-[90%] m-auto">
+                <input type="search" placeholder="Search movie, TV Show ..." className="w-full py-2.5 focus:border-none focus:outline-none focus:ring-0"/>
+            </div>
+      </header>
+    );
+  };
+  
+  export default HeadCom;
