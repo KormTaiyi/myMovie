@@ -6,9 +6,9 @@ const HomePage = () => {
   return (
     <div>
       <HeroSection/>
-      <TrendingPage title="Trending"/>
+      <TrendingPage type="Trending" state1="Today" state2="This Week"/>
       <TrailerPage/>
-      <TrendingPage title="What's Popular"/>
+      <TrendingPage type="What's Popular"/>
     </div>
   )
 }

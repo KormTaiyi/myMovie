@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
 
-const TrendingPage = ({title}) => {
-  const url = "";
+const TrendingPage = ({type,state1,state2}) => {
+  const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=aacdbe83dedab8fc913bd72adf3fdbad`;
+
   const [data,setData] = useState([])
   useEffect(()=>{
     async function fetchingData(){
       try {
         const response = await fetch(url)
         const result = await response.json()
-        setData(result)
+        setData(result.results || [])
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -18,31 +19,31 @@ const TrendingPage = ({title}) => {
   },[])
   return (
     <main className="w-full py-5">
-      <div className="max-w-7xl m-auto w-full sm:w-[90%] sm:px-0 px-2">
+      <div className="m-auto w-full sm:w-[90%] sm:px-0 px-2">
         <div className="flex gap-4 mb-6">
-          <h1 className="text-lg md:text-2xl">{title}</h1>
+          <h1 className="text-lg md:text-2xl">{type}</h1>
             {
               <div className="flex items-center gap-4 border-1 rounded-2xl">
-                <p className="cursor-pointer pl-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">Today</p>
-                <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">This Week</p>
+                <p className="cursor-pointer pl-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">{state1}</p>
+                <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">{state1}</p>
               </div>
             }
         </div>
         <div className="w-full">
           <div className="overflow-hidden">
+            <div className="flex gap-5 overflow-x-auto">
               {
-                // data.map(d=>(
-                  <div className="flex gap-5 overflow-x-auto">
-                    <div className="w-[130px] sm:w-[160px] shrink-0">
-                        <Link to=""><img src="" alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
+                data.map(d=>(
+                    <div className="w-[130px] sm:w-[160px] shrink-0" key={d.id}>
+                        <Link to=""><img src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
                         <div className="w-full min-h-[60px] p-3">
-                          <Link to="" className="font-bold text-lg">title{}</Link>
-                          <p className="text-gray-800 font-thin text-md">date{}</p>
+                          <Link to="" className="font-bold text-lg">{d.title}</Link>
+                          <p className="text-gray-800 font-thin text-md">{d.release_date}</p>
                         </div>
                     </div>
-                  </div>
-                // )) 
+                ))
               }
+            </div>
           </div>
         </div>
       </div>
