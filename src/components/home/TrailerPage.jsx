@@ -9,8 +9,8 @@ const TrailerPage = () => {
           <h1 className="text-lg md:text-2xl">Latest Trailers</h1>
           {
             <div className="flex items-center sm:gap-4 gap-3 border-1 rounded-2xl">
-              <p className="cursor-pointer pl-2 md:text-lg text-sm bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">Popular</p>
-              <p className="cursor-pointer pr-2 md:text-lg text-sm bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">In Theaters</p>
+              <p className="cursor-pointer pl-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">Popular</p>
+              <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">In Theaters</p>
             </div>
           }
         </div>

@@ -23,8 +23,8 @@ const TrendingPage = ({title}) => {
           <h1 className="text-lg md:text-2xl">{title}</h1>
             {
               <div className="flex items-center gap-4 border-1 rounded-2xl">
-                <p className="cursor-pointer pl-2 md:text-lg text-sm bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">Today</p>
-                <p className="cursor-pointer pr-2 md:text-lg text-sm bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">This Week</p>
+                <p className="cursor-pointer pl-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">Today</p>
+                <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">This Week</p>
               </div>
             }
         </div>
@@ -36,7 +36,7 @@ const TrendingPage = ({title}) => {
                     <div className="w-[130px] sm:w-[160px] shrink-0">
                         <Link to=""><img src="" alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
                         <div className="w-full min-h-[60px] p-3">
-                          <Link to="" className="font-bold text-md">title{}</Link>
+                          <Link to="" className="font-bold text-lg">title{}</Link>
                           <p className="text-gray-800 font-thin text-md">date{}</p>
                         </div>
                     </div>
