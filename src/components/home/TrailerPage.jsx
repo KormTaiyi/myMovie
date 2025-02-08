@@ -4,7 +4,7 @@ const TrailerPage = () => {
   return (
     // hover change background img
     <section className="w-full bg-green-200 pt-5">
-      <div className="w-full sm:w-[90%] m-auto sm:px-0 px-2">
+      <div className="w-full sm:w-[90%]   max-w-7xl m-auto sm:px-0 px-2">
         <div className="flex gap-2 sm:gap-4 md:gap-6 mb-6">
           <h1 className="text-lg md:text-2xl">Latest Trailers</h1>
           {

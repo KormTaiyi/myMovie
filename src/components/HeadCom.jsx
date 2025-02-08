@@ -8,7 +8,7 @@ const HeadCom = () => {
     return (
       <header className="w-full">
             <div className="bg-(--primary-color) relative">
-                <div className="w-[90%] m-auto flex items-center justify-between py-2">
+                <div className="max-w-7xl sm:w-[90%] m-auto flex items-center justify-between py-2 px-2 sm:px-0">
                     <div className="flex items-center gap-5">
                         <div className="flex items-center gap-2">
                             <FaBars className="text-xl text-white block md:hidden" onClick={() => setIsOpen(!isOpen)}/>
@@ -26,7 +26,7 @@ const HeadCom = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-[90%] m-auto">
+            <div className="w-[90%] max-w-7xl m-auto">
                 <input type="search" placeholder="Search movie, TV Show ..." className="w-full py-2.5 focus:border-none focus:outline-none focus:ring-0"/>
             </div>
       </header>

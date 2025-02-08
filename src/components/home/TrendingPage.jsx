@@ -18,7 +18,7 @@ const TrendingPage = ({title}) => {
   },[])
   return (
     <main className="w-full py-5">
-      <div className="m-auto w-full sm:w-[90%] sm:px-0 px-2">
+      <div className="max-w-7xl m-auto w-full sm:w-[90%] sm:px-0 px-2">
         <div className="flex gap-4 mb-6">
           <h1 className="text-lg md:text-2xl">{title}</h1>
             {
@@ -41,7 +41,7 @@ const TrendingPage = ({title}) => {
                         </div>
                     </div>
                   </div>
-                // ))
+                // )) 
               }
           </div>
         </div>

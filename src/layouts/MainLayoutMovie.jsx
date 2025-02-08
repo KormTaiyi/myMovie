@@ -7,7 +7,7 @@ const MainLayoutMovie = () => {
   return (
     <section>
         <HeadTwo/>
-        <div className="w-full lg:w-[90%] m-auto grid grid-cols-12">
+        <div className="w-full lg:w-[90%] max-w-7xl m-auto grid grid-cols-12">
             <div className="col-span-12 sm:col-span-4 md:col-span-3">
                 <LeftSide/>
             </div>

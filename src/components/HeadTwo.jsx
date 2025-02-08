@@ -8,7 +8,7 @@ const HeadTwo = () => {
     return (
       <header className="w-full mb-10">
             <div className="bg-(--primary-color) relative">
-                <div className="w-[90%] m-auto flex items-center justify-between py-2">
+                <div className="w-[90%] flex items-center justify-between py-2 max-w-7xl m-auto">
                     <div className="flex items-center gap-5">
                         <div className="flex items-center gap-2">
                             <FaBars className="text-xl text-white block md:hidden" onClick={() => setIsOpen(!isOpen)}/>
