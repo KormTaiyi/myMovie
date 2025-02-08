@@ -3,10 +3,10 @@ import { FaBars, FaHeart, FaUser } from "react-icons/fa6";
 import logo from "../assets/logo.png"
 import { useState } from "react";
 
-const HeadCom = () => {
+const HeadTwo = () => {
     const [isOpen,setIsOpen]= useState(false)
     return (
-      <header className="w-full">
+      <header className="w-full mb-10">
             <div className="bg-(--primary-color) relative">
                 <div className="w-[90%] m-auto flex items-center justify-between py-2">
                     <div className="flex items-center gap-5">
@@ -26,11 +26,8 @@ const HeadCom = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-[90%] m-auto">
-                <input type="search" placeholder="Search movie, TV Show ..." className="w-full py-2.5 focus:border-none focus:outline-none focus:ring-0"/>
-            </div>
       </header>
     );
   };
   
-  export default HeadCom;
+  export default HeadTwo;
