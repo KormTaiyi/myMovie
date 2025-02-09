@@ -18,7 +18,7 @@ const MoviePage = () => {
     <section className="w-full flex flex-wrap justify-around gap-3 pt-11 md:pt-12 lg:pt-13  min-h-[360px]">
       {
         movie.map((m)=>(
-          <div className="w-[150px] md:w-[170px] lg:w-[190px] overflow-hidden rounded-b-lg shadow-gray-400 shadow-lg mb-8" key={m.id}>
+          <div className="cursor-pointer w-[150px] md:w-[170px] lg:w-[190px] overflow-hidden rounded-b-lg shadow-gray-400 shadow-lg mb-8" key={m.id}>
             <img src={`https://image.tmdb.org/t/p/w500${m.poster_path}`} className="object-center w-full h-[190px] md:h-[200px] lg:h-[220px] rounded-t-lg bg-blue-400"/>
             <div className="p-2.5"> 
               <h1 className="font-bold tracking-wider capitalize">{m.title}</h1>
