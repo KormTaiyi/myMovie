@@ -25,7 +25,7 @@ const TrendingPage = ({type,state1,state2}) => {
             {
               <div className="flex items-center gap-4 border-1 rounded-2xl">
                 <p className="cursor-pointer pl-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-purple-600">{state1}</p>
-                <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">{state1}</p>
+                <p className="cursor-pointer pr-2 md:text-xl text-lg bg-clip-text text-transparent bg-linear-to-br from-teal-300 to-blue-600">{state2}</p>
               </div>
             }
         </div>
@@ -37,8 +37,8 @@ const TrendingPage = ({type,state1,state2}) => {
                     <div className="w-[130px] sm:w-[160px] shrink-0" key={d.id}>
                         <Link to=""><img src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
                         <div className="w-full min-h-[60px] p-3">
-                          <Link to="" className="font-bold text-lg">{d.title}</Link>
-                          <p className="text-gray-800 font-thin text-md">{d.release_date}</p>
+                          <Link to="" className="font-bold">{d.title}</Link>
+                          <p className="text-gray-800 font-light text-md">{d.release_date}</p>
                         </div>
                     </div>
                 ))
