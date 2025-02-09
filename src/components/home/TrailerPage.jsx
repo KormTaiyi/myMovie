@@ -1,6 +1,5 @@
 import { Link } from "react-router"
 import {useState, useEffect} from "react"
-import { Quickview } from "../AllButton"
 
 const TrailerPage = () => {
   const [trailer,setTrailer] = useState([])

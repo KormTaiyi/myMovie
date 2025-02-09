@@ -1,15 +1,18 @@
-export function Quickview() {
+import { LuBookmarkPlus, LuBookmarkCheck } from "react-icons/lu";
+import { useState } from "react";
+
+export function SavedMovie() {
+    const [isBookmarked, setIsBookmarked] = useState(false);
+
     return (
-        <main className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%] h-[90vh] bg-red-400">
-            bg
+        <main>
+            <button
+                className="cursor-pointer text-xl text-gray-500 absolute bottom-2 right-3"
+                onClick={() => setIsBookmarked(!isBookmarked)}
+                aria-label={isBookmarked ? "Remove from bookmarks" : "Add to bookmarks"}
+            >
+                {isBookmarked ? <LuBookmarkCheck /> : <LuBookmarkPlus />}
+            </button>
         </main>
     );
-}
-
-export function LinkMovie(){
-    return(
-        <main>
-            
-        </main>
-    )
 }
