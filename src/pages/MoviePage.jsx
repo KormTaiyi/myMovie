@@ -57,26 +57,19 @@ const MoviePage = () => {
 
       {/* Modal Section */}
       {modal && selectedMovie && (
-        <div
-          className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50"
-        >
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50">
           <div
             className="relative w-[98%] lg:w-[90%] min-h-[90vh] bg-no-repeat bg-cover overflow-hidden lg:rounded-2xl shadow-2xl md:flex"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
             onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
           >
-            <p
-              onClick={closeModal}
-              className="absolute border p-1 rounded-md text-white right-6 z-30 top-2 cursor-pointer"
-            >
+            <p onClick={closeModal} className="absolute border p-1 rounded-md text-white right-6 z-30 top-2 cursor-pointer">
               <ImCross />
             </p>
             <div className="w-full h-full bg-black absolute opacity-60"></div>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+            <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
               className="relative z-10 ml-2 my-3 object-contain w-[400px] h-[350px]"
-              alt={selectedMovie.title}
-            />
+              alt={selectedMovie.title}/>
             <div className="p-4 w-full h-full text-white relative z-10">
               <h1 className="font-bold tracking-wider capitalize md:text-2xl text-xl">
                 {selectedMovie.title}

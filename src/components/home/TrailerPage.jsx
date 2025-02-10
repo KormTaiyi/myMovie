@@ -33,26 +33,20 @@ const TrailerPage = () => {
             <div className="flex gap-10 overflow-x-auto">
               {
                 trailer.map(trail=>(
-                    <div className="w-[250px] sm:w-[300px] overflow-hidden rounded-xl shrink-0 mb-5" key={trail.id}>
-                      <Link to="" className=" overflow-hidden rounded-xl">
-                        <div className="overflow-hidden block rounded-xl hover:scale-105 duration-200">
-                          <iframe 
-                            src="https://www.youtube.com/embed/50NudnPC_Qw?mute=0" 
-                            className="w-full rounded-xl h-[170px]"
-                            allow="encrypted-media" 
-                            allowFullScreen
-                            title="Trailer Video"
-                          />
-                        </div>
-                      </Link>
-                      <div className="w-full min-h-[60px] p-2 text-center">
-                        <Link to="" className="text-white font-bold text-xl md:text-2xl">{trail.title}</Link>
-                        <p className="text-white text-2xs md:text-xl">{trail.vote_average}</p>
+                  <div className="w-[250px] sm:w-[300px] overflow-hidden rounded-xl shrink-0 mb-5" key={trail.id}>
+                    <Link to="" className=" overflow-hidden rounded-xl">
+                      <div className="overflow-hidden block rounded-xl hover:scale-105 duration-200">
+                        <iframe src="https://www.youtube.com/embed/50NudnPC_Qw?mute=0" className="w-full rounded-xl h-[170px]" allow="encrypted-media" allowFullScreen title="Trailer Video"/>
                       </div>
+                    </Link>
+                    <div className="w-full min-h-[60px] p-2 text-center">
+                      <Link to="" className="text-white font-bold text-xl md:text-2xl">{trail.title}</Link>
+                      <p className="text-white text-2xs md:text-xl">{trail.vote_average}</p>
                     </div>
+                  </div>
                 ))
               }
-              </div>
+            </div>
           </div>
         </div>
       </div>

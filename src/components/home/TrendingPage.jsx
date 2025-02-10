@@ -34,12 +34,12 @@ const TrendingPage = ({type,state1,state2}) => {
             <div className="flex gap-5 overflow-x-auto pb-5">
               {
                 data.map(d=>(
-                  <div className="cursor-pointer w-[140px] sm:w-[170px] shrink-0" key={d.id}>
-                      <Link to=""><img src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
-                      <div className="w-full p-2.5 bg-white rounded-lg shadow-lg">
-                        <Link to="" className="font-bold">{d.title}</Link>
-                        <p className="text-gray-800 font-light text-md">{d.release_date}</p>
-                      </div>
+                  <div onClick={()=>{!modal}} className="cursor-pointer w-[140px] sm:w-[170px] shrink-0" key={d.id}>
+                    <Link to=""><img src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
+                    <div className="w-full p-2.5 bg-white rounded-lg shadow-lg">
+                      <Link to="" className="font-bold">{d.title}</Link>
+                      <p className="text-gray-800 font-light text-md">{d.release_date}</p>
+                    </div>
                   </div>
                 ))
               }
