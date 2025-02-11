@@ -61,7 +61,7 @@ const MoviePage = () => {
           <div
             className="relative w-[98%] lg:w-[90%] min-h-[90vh] bg-no-repeat bg-cover overflow-hidden lg:rounded-2xl shadow-2xl md:flex"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
-            onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
+            onClick={(e) => e.stopPropagation()}
           >
             <p onClick={closeModal} className="absolute border p-1 rounded-md text-white right-6 z-30 top-2 cursor-pointer">
               <ImCross />
