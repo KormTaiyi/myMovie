@@ -11,7 +11,7 @@ const MoviePage = () => {
     async function FetchMovieAPI() {
       try {
         const response = await fetch(
-          "https://api.themoviedb.org/3/movie/popular?api_key=aacdbe83dedab8fc913bd72adf3fdbad&page=1"
+          "https://api.themoviedb.org/3/tv/popular?api_key=aacdbe83dedab8fc913bd72adf3fdbad&page=1"
         );
         const result = await response.json();
         setMovies(result.results || []);
@@ -44,11 +44,11 @@ const MoviePage = () => {
             <img onClick={() => openModal(movie)}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               className="object-center cursor-pointer w-full h-[190px] md:h-[200px] lg:h-[220px] rounded-t-lg"
-              alt={movie.title}
+              alt={movie.name}
             />
             <div className="p-2.5">
-              <h1 className="font-bold tracking-wider capitalize">{movie.title}</h1>
-              <p>{movie.release_date}</p>
+              <h1 className="font-bold tracking-wider capitalize">{movie.name}</h1>
+              <p>{movie.first_air_date}</p>
             </div>
             <SavedMovie />
           </div>
@@ -69,16 +69,17 @@ const MoviePage = () => {
             <div className="w-full h-full bg-black absolute opacity-60"></div>
             <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
               className="relative z-10 ml-2 my-3 object-contain w-[400px] h-[350px]"
-              alt={selectedMovie.title}/>
+              alt={selectedMovie.name}/>
             <div className="p-4 w-full h-full text-white relative z-10">
               <h1 className="font-bold tracking-wider capitalize md:text-2xl text-xl">
-                {selectedMovie.title}
+                {selectedMovie.name}
               </h1>
               <div className="flex items-center gap-1 mb-4">
-                <p>{selectedMovie.release_date}</p>
+                <p>{selectedMovie.first_air_date}</p>
                 <p className="capitalize">({selectedMovie.original_language})</p>
               </div>
-              <p className="text-lg md:text-xl font-bold">Overview</p>
+              <p>{selectedMovie.popularity}</p>
+              <p className="text-lg md:text-xl font-bold mb-4">Overview</p>
               <p className="text-sm">{selectedMovie.overview}</p>
             </div>
           </div>

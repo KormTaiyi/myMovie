@@ -1,10 +1,27 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
+import { ImCross } from "react-icons/im";
 
 const TrendingPage = ({type,state1,state2}) => {
   const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=aacdbe83dedab8fc913bd72adf3fdbad`;
 
   const [data,setData] = useState([])
+  // const [movies, setMovies] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const openModal = (movie) => {
+    setSelectedMovie(movie);
+    setModal(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setModal(false);
+    setSelectedMovie(null);
+    document.body.style.overflow = "auto"; 
+  };
+
   useEffect(()=>{
     async function fetchingData(){
       try {
@@ -35,7 +52,11 @@ const TrendingPage = ({type,state1,state2}) => {
               {
                 data.map(d=>(
                   <div onClick={()=>{!modal}} className="cursor-pointer w-[140px] sm:w-[170px] shrink-0" key={d.id}>
-                    <Link to=""><img src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/></Link>
+                    <Link to="">
+                    <img onClick={() => openModal(d)} 
+                      src={`https://image.tmdb.org/t/p/w500${d.poster_path}`} 
+                      alt="" className="w-full rounded-xl h-[190px] sm:h-[220px] bg-red-300"/>
+                    </Link>
                     <div className="w-full p-2.5 bg-white rounded-lg shadow-lg">
                       <Link to="" className="font-bold">{d.title}</Link>
                       <p className="text-gray-800 font-light text-md">{d.release_date}</p>
@@ -47,6 +68,34 @@ const TrendingPage = ({type,state1,state2}) => {
           </div>
         </div>
       </div>
+      {modal && selectedMovie && (
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50">
+          <div
+            className="relative w-[85%] lg:w-[78%] min-h-[70vh] bg-no-repeat bg-cover overflow-hidden lg:rounded-2xl shadow-2xl md:flex"
+            style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p onClick={closeModal} className="absolute border p-1 rounded-md text-white right-6 z-30 top-2 cursor-pointer">
+              <ImCross />
+            </p>
+            <div className="w-full h-full bg-black absolute opacity-60"></div>
+            <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+              className="relative z-10 ml-2 my-3 object-contain w-[350px] h-[300px]"
+              alt={selectedMovie.title}/>
+            <div className="p-4 w-full h-full text-white relative z-10">
+              <h1 className="font-bold tracking-wider capitalize md:text-2xl text-xl">
+                {selectedMovie.title}
+              </h1>
+              <div className="flex items-center gap-1 mb-4">
+                <p>{selectedMovie.release_date}</p>
+                <p className="capitalize">({selectedMovie.original_language})</p>
+              </div>
+              <p className="text-lg md:text-xl font-bold">Overview</p>
+              <p className="text-sm">{selectedMovie.overview}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }

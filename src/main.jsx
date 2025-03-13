@@ -5,6 +5,7 @@ import MainLayout from "./layouts/MainLayout"
 import MainLayoutMovie from "./layouts/MainLayoutMovie"
 import ErrorPage from "./pages/ErrorPage"
 import HomePage from "./pages/HomePage"
+import TvPage from "./pages/TvPage"
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MoviePage from './pages/MoviePage'
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'movie',
         element:<MoviePage/>
+      },
+      {
+        path:'tv',
+        element:<TvPage/>
       }
     ]
   }
