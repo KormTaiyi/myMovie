@@ -71,7 +71,7 @@ const TrendingPage = ({type,state1,state2}) => {
       {modal && selectedMovie && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50">
           <div
-            className="relative w-[85%] lg:w-[78%] min-h-[70vh] bg-no-repeat bg-cover overflow-hidden lg:rounded-2xl shadow-2xl md:flex"
+            className="max-w-6xl relative w-[85%] lg:w-[78%] min-h-[60vh] bg-no-repeat bg-cover overflow-hidden rounded-xl shadow-2xl md:flex"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -90,8 +90,8 @@ const TrendingPage = ({type,state1,state2}) => {
                 <p>{selectedMovie.release_date}</p>
                 <p className="capitalize">({selectedMovie.original_language})</p>
               </div>
-              <p className="text-lg md:text-xl font-bold">Overview</p>
-              <p className="text-sm">{selectedMovie.overview}</p>
+              <p className="text-lg md:text-xl mb-3 font-bold">Overview</p>
+              <p>{selectedMovie.overview}</p>
             </div>
           </div>
         </div>
