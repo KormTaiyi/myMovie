@@ -59,7 +59,7 @@ const MoviePage = () => {
       {modal && selectedMovie && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50">
           <div
-            className="relative w-[95%] lg:w-[86%] min-h-[80vh] bg-no-repeat bg-cover overflow-hidden rounded shadow-2xl md:flex"
+            className="relative w-[90%] lg:w-[80%] min-h-[500px] bg-no-repeat bg-cover overflow-hidden rounded shadow-2xl md:flex"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
             onClick={(e) => e.stopPropagation()}
           >

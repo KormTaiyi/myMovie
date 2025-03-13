@@ -71,7 +71,7 @@ const TrendingPage = ({type,state1,state2}) => {
       {modal && selectedMovie && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50">
           <div
-            className="max-w-6xl relative w-[85%] lg:w-[78%] min-h-[60vh] bg-no-repeat bg-cover overflow-hidden rounded-xl shadow-2xl"
+            className="max-w-6xl relative w-[85%] lg:w-[78%] min-h-[600px] bg-no-repeat bg-cover overflow-hidden rounded-xl shadow-2xl"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path})` }}
             onClick={(e) => e.stopPropagation()}
           >
